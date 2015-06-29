@@ -3,7 +3,7 @@ require 'spec_helper'
 RSpec.describe ServiceMonster::Client::Reminders do
   
   before do
-    @client = ServiceMonster.client({api_key: "Q0xfQVBJVVNFUjoyYnNtYkU1ZjJONHNOUGo="})
+    @client = ServiceMonster::Client.new
   end
 
   describe '#reminders' do
@@ -13,7 +13,7 @@ RSpec.describe ServiceMonster::Client::Reminders do
       body: fixture('reminders.json'), 
       :headers => {
             :content_type => "application/json; charset=utf-8", 
-            authorization: 'Basic Q0xfQVBJVVNFUjoyYnNtYkU1ZjJONHNOUGo='}
+            authorization: 'Basic blah'}
       )
     end
 
@@ -29,7 +29,7 @@ RSpec.describe ServiceMonster::Client::Reminders do
         body: fixture('reminders_filtered.json'),
         :headers => {
            :content_type => "application/json; charset=utf-8",
-           authorization: 'Basic Q0xfQVBJVVNFUjoyYnNtYkU1ZjJONHNOUGo=' }
+           authorization: 'Basic blah' }
       )
     end
     

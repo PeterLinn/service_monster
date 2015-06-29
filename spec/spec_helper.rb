@@ -77,6 +77,7 @@ end
 
 def stub_get(path)
   stub_request(:get, "#{ServiceMonster.endpoint}#{ServiceMonster.api_version}/" + path)
+  #
 end
 
 def fixture_path
@@ -84,5 +85,5 @@ def fixture_path
 end
 
 def fixture(file)
-  File.new(fixture_path + '/' + file)
+  File.new(fixture_path + '/' + file,"w+")
 end
