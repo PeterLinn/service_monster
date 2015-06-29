@@ -1,5 +1,6 @@
 require 'service_monster'
 require 'webmock/rspec'
+WebMock.allow_net_connect!
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
